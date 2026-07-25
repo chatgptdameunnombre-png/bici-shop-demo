@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panel del dueño — Ciclo Norte</title>
+  <title>Entrar — Panel Ciclo Norte</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="admin-body">
-
-  <!-- LOGIN -->
-  <section class="login-screen" id="loginScreen">
+  <section class="login-screen">
     <form class="login-card" id="loginForm">
       <h1>Panel del dueño</h1>
       <p>Administra tu tienda: productos, precios y stock.</p>
@@ -26,80 +24,7 @@
       <div class="login-hint" id="loginHint"></div>
     </form>
   </section>
-
-  <!-- DASHBOARD -->
-  <div id="dash" hidden>
-    <header class="admin-top">
-      <div class="wrap admin-top__in">
-        <a href="#" class="brand">Ciclo<span class="dot">Norte</span> <small>Panel</small></a>
-        <div style="display:flex;align-items:center;gap:16px">
-          <span class="who" id="who"></span>
-          <a href="index.html" class="btn btn--ghost" target="_blank">Ver tienda ↗</a>
-          <button class="btn btn--ghost" id="logout">Salir</button>
-        </div>
-      </div>
-    </header>
-
-    <main class="wrap admin-main">
-      <div class="admin-head">
-        <h1>Mis productos</h1>
-        <button class="btn" id="addBtn" style="width:auto">+ Agregar producto</button>
-      </div>
-
-      <div class="stat-row">
-        <div class="stat"><div class="n" id="stTotal">0</div><div class="l">Productos</div></div>
-        <div class="stat"><div class="n" id="stStock">0</div><div class="l">Unidades en stock</div></div>
-        <div class="stat"><div class="n" id="stOut">0</div><div class="l">Agotados</div></div>
-      </div>
-
-      <div class="p-table">
-        <div class="p-row p-row--head">
-          <span></span><span>Producto</span><span class="hide-sm">Categoría</span>
-          <span class="hide-sm">Precio</span><span>Stock</span><span></span>
-        </div>
-        <div id="pList"></div>
-      </div>
-    </main>
-  </div>
-
-  <!-- MODAL -->
-  <div class="modal-ov" id="modalOv">
-    <div class="modal">
-      <div class="modal__head">
-        <h3 id="modalTitle">Nuevo producto</h3>
-        <button class="icon-btn" id="modalClose">✕</button>
-      </div>
-      <form id="prodForm">
-        <div class="modal__body">
-          <input type="hidden" id="pId">
-          <div class="row-2">
-            <div class="field"><label>Nombre</label><input class="input" id="pNombre" required></div>
-            <div class="field"><label>Marca</label><input class="input" id="pMarca" required></div>
-          </div>
-          <div class="row-2">
-            <div class="field"><label>Categoría</label>
-              <input class="input" id="pCategoria" list="cats" required>
-              <datalist id="cats"><option>Bicicletas</option><option>Cascos</option><option>Lentes</option><option>Accesorios</option></datalist>
-            </div>
-            <div class="field"><label>Precio (MXN)</label><input class="input" id="pPrecio" type="number" min="0" required></div>
-          </div>
-          <div class="field"><label>Stock (unidades)</label><input class="input" id="pStock" type="number" min="0" required></div>
-          <div class="field"><label>Descripción</label><textarea class="input" id="pDesc" rows="2"></textarea></div>
-          <div class="field">
-            <label>Foto (URL de la imagen)</label>
-            <input class="input" id="pImagen" placeholder="https://...">
-            <img class="img-preview" id="pImgPrev" alt="" hidden>
-          </div>
-        </div>
-        <div class="modal__foot">
-          <button type="button" class="btn btn--ghost" id="modalCancel">Cancelar</button>
-          <button type="submit" class="btn btn--accent" style="width:auto">Guardar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <div class="toast-wrap" id="toasts"></div>
-  <script type="module" src="js/admin.js"></script>
+  <script type="module" src="js/login.js"></script>
 </body>
 </html>
