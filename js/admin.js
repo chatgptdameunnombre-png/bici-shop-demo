@@ -14,7 +14,7 @@ db.onAuth(user => {
   const auth = !!user;
   $("#loginScreen").hidden = auth;
   $("#dash").hidden = !auth;
-  if (auth) { $("#who").textContent = user.email; arrancarDash(); }
+  if (auth) { $("#who").textContent = user.email; window.scrollTo(0, 0); arrancarDash(); }
 });
 
 $("#loginForm").addEventListener("submit", async e => {
