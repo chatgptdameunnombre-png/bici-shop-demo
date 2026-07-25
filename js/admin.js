@@ -37,7 +37,10 @@ function traducirError(err) {
     return "Correo o contraseña incorrectos.";
   if (c.includes("invalid-email")) return "El correo no es válido.";
   if (c.includes("too-many-requests")) return "Demasiados intentos. Espera un momento.";
-  return err?.message || "No se pudo entrar.";
+  if (c.includes("unauthorized-domain"))
+    return "Este dominio no está autorizado en Firebase. Agrégalo en Authentication → Settings → Authorized domains.";
+  if (c.includes("network-request-failed")) return "Sin conexión. Revisa tu internet.";
+  return (err?.message || "No se pudo entrar.") + (c ? ` (${c})` : "");
 }
 
 /* ---------- dashboard ---------- */
