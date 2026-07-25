@@ -31,14 +31,16 @@ El seed de productos corre solo desde el panel (autenticado); la tienda pública
 ```
 bici-shop-demo/
 ├── index.html        tienda pública
-├── admin.html        panel del dueño
+├── admin.html        SOLO login → redirige a panel.html al entrar
+├── panel.html        dashboard del dueño (protegido; sin sesión redirige a admin.html)
 ├── css/styles.css    estilos (tienda + panel)
 └── js/
     ├── config.js     firebaseConfig + WHATSAPP_NUMERO + datos negocio
     ├── seed.js       3 productos iniciales
     ├── db.js         adaptador: Firestore o localStorage (misma interfaz)
     ├── store.js      tienda + carrito
-    └── admin.js      panel + login + CRUD
+    ├── login.js      login (admin.html) → replace panel.html
+    └── panel.js      dashboard + CRUD (panel.html); guard de sesión
 ```
 
 `db.js` expone una sola interfaz (`onProducts`, `addProduct`, `updateProduct`, `deleteProduct`, `login`, `logout`, `onAuth`, `seedIfEmpty`) para que store.js y admin.js no sepan si es nube o local.
