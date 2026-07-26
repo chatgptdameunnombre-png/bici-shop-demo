@@ -7,7 +7,7 @@ export const firebaseConfig = {
   appId: "1:1033432478399:web:6d6223f92caac268874c0a"
 };
 
-export const WHATSAPP_NUMERO = "5213300000000";
+export const WHATSAPP_NUMERO = "523317619651";
 
 export const NEGOCIO = {
   nombre: "Ciclo Norte",
